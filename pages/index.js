@@ -1,11 +1,21 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Header from "../Components/header";
+import Container from "../Components/container";
+import Banner from "../Components/banner";
+import { HomeMarket } from "../Components/homeMarket";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <h1>hello next.js!</h1>
+    <div>
+      <Head>
+        <title>Thrifter</title>
+      </Head>
+      <Header />
+      <Banner />
+      <div className="mt-20"></div>
+      <Container>
+        <HomeMarket />
+      </Container>
     </div>
-  )
+  );
 }
