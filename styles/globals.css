@@ -112,6 +112,7 @@ img {
 
 .text-highligth {
   position: relative;
+  z-index: 1;
 }
 
 .text-highligth::before {

@@ -9,7 +9,7 @@ export const MainClothCard = ({ img, content, price }) => {
         <a className="outline-none">
           <div className="flex flex-col gap-3">
             <div className="border-[3px] border-[#edf1f4] rounded-xl">
-              <Image src={TestImage} />
+              <Image src={TestImage} alt="" />
             </div>
             <div>
               <h1 className="text-[14px] font-[500] text-[#252d3a]">
