@@ -1,3 +1,7 @@
-export const Section = ({ children }) => {
-  return <div className="bg-[#EEF1F4] py-[40px] relative">{children}</div>;
+export const Section = ({ children, className }) => {
+  return (
+    <div className={`rounded-xl bg-[#262e39] relative ${className}`}>
+      {children}
+    </div>
+  );
 };

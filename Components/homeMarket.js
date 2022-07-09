@@ -4,7 +4,7 @@ import { TextHighlighter } from "./textHighlighter";
 
 export const HomeMarket = () => {
   return (
-    <div>
+    <div className="px-10">
       <div className="mb-16 text-center">
         <h1 className="text-[#252d3a] pb-[30px] text-[26px] font-bold">
           Sizzling summer style <br /> at{" "}
