@@ -6,8 +6,8 @@ export const Footer = () => {
   return (
     <div className="py-14 bg-[#e66328] text-white">
       <Container>
-        <div className="flex justify-between px-10">
-          <div>
+        <div className="flex flex-col md:flex-row md:justify-between">
+          <div className="text-center">
             <div className="mb-2">
               <Image src={LogoWhite} alt="" width="240px" height="42px" />
             </div>
@@ -15,7 +15,7 @@ export const Footer = () => {
               Join the Circular Fashion Revolution.
             </p>
           </div>
-          <div className="flex justify-around w-full">
+          <div className="hidden md:flex justify-around w-full">
             <div>
               <h1 className="text-[21px] leading-[25px] tracking-[.5px] font-bold mb-6">
                 ABOUT
@@ -123,7 +123,7 @@ export const Footer = () => {
               </ul>
             </div>
           </div>
-          <div>
+          <div className="text-center">
             <h3 className="text-[15px] leading-[21px] font-medium">
               © Thrifter Inc. All Rights Reserved
             </h3>

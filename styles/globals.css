@@ -127,25 +127,61 @@ a {
 .header {
   position: absolute;
   background-color: transparent;
+  margin-bottom: 0;
 }
 
-@media (max-width: 768px) {
+.main-cloth-card {
+  flex: initial;
+}
+
+@media (max-width: 767.5px) {
   .header {
     background-color: white;
+    position: relative;
+    margin-bottom: 0;
+  }
+  .main-cloth-card {
+    flex: 0 0 30vw;
   }
 }
 
-.header--stuck {
-  position: fixed;
-  transform: translate3d(0,-100%,0);
-  transition: none;
-}
-
 .header--opening {
+  animation: headerAnime .4s cubic-bezier(.165, .84, .44, 1);
   position: fixed;
   transform: translateY(0);
-  transition: transform .4s cubic-bezier(.165, .84, .44, 1);
   background-color: #f4eae4;
+}
+
+@keyframes headerAnime {
+  0% {
+    position: fixed;
+    transform: translate3d(0,-100%,0);
+  }
+  100% {
+    position: fixed;
+    transform: translateY(0);
+  }
+}
+
+.extra-nav--opening {
+  transform: translateY(0);
+  position: fixed;
+  top: 75px;
+  left: 0;
+  width: 100%;
+  animation: extraMenuAnime 1s cubic-bezier(.165, .84, .44, 1);
+}
+
+@keyframes extraMenuAnime {
+  0% {
+    position: fixed;
+    transform: translate3d(0,-400%,0);
+    transition: none;
+  }
+  100% {
+    transform: translateY(0);
+    position: fixed;
+  }
 }
 
 .menu {
@@ -167,7 +203,7 @@ a {
   visibility: hidden;
 }
 
-.extra-menu--open {
+.extra-menu--opening {
   transition: .3s;
   height: fit-content;
   opacity: 1;

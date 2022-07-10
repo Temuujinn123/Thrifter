@@ -13,7 +13,7 @@ import darkLogo from "../public/img/Thrift_Logo_Dark.svg";
 import Container from "./container";
 
 export default function Header() {
-  const [fixed, setFixed] = useState(null);
+  const [fixed, setFixed] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [menuOpened, setMenuOpened] = useState(false);
   const [extraMenuOpened, setExtraMenuOpened] = useState(false);
@@ -21,14 +21,10 @@ export default function Header() {
   const handleScroll = () => {
     const position = window.pageYOffset;
     setScrollPosition(position);
-    if (position > 290) {
-      setFixed("stuck");
-    }
-    if (position < 280) {
-      setFixed(null);
-    }
-    if (position > 300) {
-      setFixed("opening");
+    if (position < 300) {
+      setFixed(false);
+    } else {
+      setFixed(true);
     }
   };
 
@@ -42,9 +38,21 @@ export default function Header() {
 
   return (
     <>
-      <div className={`top-0 left-0 w-full z-10 header header--${fixed}`}>
+      <div
+        className={`top-0 left-0 w-full z-20 header ${
+          fixed ? "header--opening" : ""
+        }`}
+      >
         <Container>
-          <div className="flex items-center h-[70px] justify-between px-0 md:px-10">
+          <div className="flex items-center h-[70px] justify-between px-0">
+            <div className="block md:hidden">
+              <span
+                className="text-2xl cursor-pointer"
+                onClick={() => setMenuOpened(true)}
+              >
+                <HiMenuAlt2 />
+              </span>
+            </div>
             <div className="h-6">
               <Image
                 alt=""
@@ -67,7 +75,7 @@ export default function Header() {
                 </li>
               </ul>
             </div>
-            <div className="">
+            <div>
               <div className="gap-4 hidden md:flex">
                 <span className="text-3xl cursor-pointer">
                   <BsFillPersonFill />
@@ -83,12 +91,6 @@ export default function Header() {
                 <span className="text-2xl cursor-pointer">
                   <AiOutlineSearch />
                 </span>
-                <span
-                  className="text-2xl cursor-pointer"
-                  onClick={() => setMenuOpened(true)}
-                >
-                  <HiMenuAlt2 />
-                </span>
                 <span className="text-2xl cursor-pointer">
                   <AiOutlineShoppingCart />
                 </span>
@@ -100,6 +102,33 @@ export default function Header() {
 
       <div
         className={`${
+          fixed ? "extra-nav--opening" : ""
+        } block bg-[#eef1f4] md:hidden py-4 z-10`}
+      >
+        <Container>
+          <ul className="flex justify-between">
+            <li className="">
+              <a className="text-[#252d3a] text-[15px] font-bold text-center block">
+                Women
+              </a>
+            </li>
+            <li className="">
+              <a className="text-[#252d3a] text-[15px] font-bold text-center block">
+                Men
+              </a>
+            </li>
+            <li className="">
+              <a className="text-[#252d3a] text-[15px] font-bold text-center block">
+                Re-sell
+              </a>
+            </li>
+          </ul>
+        </Container>
+      </div>
+
+      {/* side menu => */}
+      <div
+        className={`${
           menuOpened ? "opacity-1 visible" : "opacity-0 invisible"
         } fixed left-0 top-0 w-full h-full bg-[rgba(255,255,255,.5)] z-10 transition-[.3s]`}
         onClick={() => setMenuOpened(false)}
@@ -107,7 +136,7 @@ export default function Header() {
       <div
         className={`${
           menuOpened ? "menu--opened" : "menu"
-        } transition-500 w-[350px] max-w-[95%] bg-white h-screen fixed left-0 z-30`}
+        } transition-500 w-[350px] max-w-[95%] bg-white h-screen fixed top-0 left-0 z-30`}
       >
         <div className="flex flex-col">
           <div className="px-3 h-[70px]">

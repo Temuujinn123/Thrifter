@@ -1,3 +1,7 @@
-export const TextHighlighter = ({ children }) => {
-  return <span className="text-highligth">{children}</span>;
+export const TextHighlighter = ({ children, mdNone }) => {
+  return (
+    <span className={`${mdNone ? "md:text-highligth" : "text-highligth"}`}>
+      {children}
+    </span>
+  );
 };
