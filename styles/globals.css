@@ -126,7 +126,6 @@ a {
 
 .header {
   position: absolute;
-  background-color: transparent;
   margin-bottom: 0;
 }
 
@@ -136,7 +135,6 @@ a {
 
 @media (max-width: 767.5px) {
   .header {
-    background-color: white;
     position: relative;
     margin-bottom: 0;
   }
@@ -208,4 +206,13 @@ a {
   height: fit-content;
   opacity: 1;
   visibility: visible;
+}
+
+.side-filter {
+  transition: all .5s cubic-bezier(.175,.885,.32,1.275);
+  width: 0;
+}
+
+.side-filter--opening {
+  width: 100%;
 }

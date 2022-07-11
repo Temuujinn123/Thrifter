@@ -1,0 +1,3 @@
+export const ClothCard = () => {
+  return;
+};

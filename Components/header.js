@@ -10,9 +10,10 @@ import {
 import { HiMenuAlt2 } from "react-icons/hi";
 import { IoIosArrowDown } from "react-icons/io";
 import darkLogo from "../public/img/Thrift_Logo_Dark.svg";
+import whiteLogo from "../public/img/Thrift_Logo_Boutique_white.svg";
 import Container from "./container";
 
-export default function Header() {
+export default function Header({ normal }) {
   const [fixed, setFixed] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [menuOpened, setMenuOpened] = useState(false);
@@ -39,15 +40,17 @@ export default function Header() {
   return (
     <>
       <div
-        className={`top-0 left-0 w-full z-20 header ${
-          fixed ? "header--opening" : ""
-        }`}
+        className={`${
+          normal ? "bg-[#252d3a] shadow-sm" : "bg-white md:bg-transparent"
+        } top-0 left-0 w-full z-20 header ${fixed ? "header--opening" : ""}`}
       >
         <Container>
           <div className="flex items-center h-[70px] justify-between px-0">
             <div className="block md:hidden">
               <span
-                className="text-2xl cursor-pointer"
+                className={`${
+                  normal ? "text-white" : ""
+                } text-2xl cursor-pointer`}
                 onClick={() => setMenuOpened(true)}
               >
                 <HiMenuAlt2 />
@@ -56,9 +59,9 @@ export default function Header() {
             <div className="h-6">
               <Image
                 alt=""
-                src={darkLogo}
+                src={normal ? whiteLogo : darkLogo}
                 height="25"
-                width="170"
+                width={`${normal ? "200" : "170"}`}
                 className="bg-cover d-inline"
               />
             </div>
@@ -77,21 +80,41 @@ export default function Header() {
             </div>
             <div>
               <div className="gap-4 hidden md:flex">
-                <span className="text-3xl cursor-pointer">
+                <span
+                  className={`${
+                    normal ? "text-white" : ""
+                  } text-3xl cursor-pointer`}
+                >
                   <BsFillPersonFill />
                 </span>
-                <span className="text-3xl cursor-pointer">
+                <span
+                  className={`${
+                    normal ? "text-white" : ""
+                  } text-3xl cursor-pointer`}
+                >
                   <AiOutlineSearch />
                 </span>
-                <span className="text-3xl cursor-pointer">
+                <span
+                  className={`${
+                    normal ? "text-white" : ""
+                  } text-3xl cursor-pointer`}
+                >
                   <AiOutlineHeart />
                 </span>
               </div>
               <div className="flex gap-2 md:hidden">
-                <span className="text-2xl cursor-pointer">
+                <span
+                  className={`${
+                    normal ? "text-white" : ""
+                  } text-2xl cursor-pointer`}
+                >
                   <AiOutlineSearch />
                 </span>
-                <span className="text-2xl cursor-pointer">
+                <span
+                  className={`${
+                    normal ? "text-white" : ""
+                  } text-2xl cursor-pointer`}
+                >
                   <AiOutlineShoppingCart />
                 </span>
               </div>
@@ -101,9 +124,9 @@ export default function Header() {
       </div>
 
       <div
-        className={`${
-          fixed ? "extra-nav--opening" : ""
-        } block bg-[#eef1f4] md:hidden py-4 z-10`}
+        className={`${fixed ? "extra-nav--opening" : ""} ${
+          normal ? "hidden" : "block"
+        } bg-[#eef1f4] md:hidden py-4 z-10`}
       >
         <Container>
           <ul className="flex justify-between">

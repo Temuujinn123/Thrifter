@@ -1,16 +1,45 @@
 import Link from "next/link";
 
-export default function Button({ className, title, font, sm }) {
-  return (
+export default function Button({
+  className,
+  title,
+  font,
+  sm,
+  normal,
+  icon,
+  onclick,
+}) {
+  return normal ? (
+    <button
+      className={`${className} font-[${
+        font ? font : "600"
+      }] md:w-[175px] h-auto md:h-[55px] text-white px-[5px] md:px-[20px] ${
+        sm ? "py-[14px]" : "py-[12px] md:pt-[18px] md:pb-[11px]"
+      } max-h-[40px] block md:hidden text-[#999] text-[.8em] leading w-full border border-[#ccc] 
+      ${
+        icon ? "flex gap-1 justify-center items-center" : ""
+      } text-center tracking-[.5px] uppercase rounded-sm`}
+      onClick={onclick}
+    >
+      {title} <span>{icon ? icon() : icon}</span>
+    </button>
+  ) : (
     <Link href="/">
       <a
-        className={`${className} text-[14px] md:text-[16px] font-[${
+        className={`${className} font-[${
           font ? font : "600"
         }] md:w-[175px] h-auto md:h-[55px] text-white px-[5px] md:px-[20px] ${
           sm ? "py-[14px]" : "py-[12px] md:pt-[18px] md:pb-[11px]"
-        } bg-[#e66328] md:min-w-auto tracking-[.5px] text-center uppercase rounded-sm relative overflow-hidden button-anime`}
+        } ${
+          normal
+            ? "max-h-[40px] block md:hidden text-[#999] text-[.8em] leading w-full border border-[#ccc]"
+            : "bg-[#e66328] md:min-w-auto relative overflow-hidden button-anime text-[14px] md:text-[16px]"
+        } ${
+          icon ? "flex gap-1 justify-center items-center" : ""
+        } text-center tracking-[.5px] uppercase rounded-sm`}
+        onClick={onclick}
       >
-        {title}
+        {title} <span>{icon ? icon() : icon}</span>
       </a>
     </Link>
   );
