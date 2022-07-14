@@ -44,8 +44,16 @@ export default function Home() {
               />
             </div>
             <div className="flex justify-center gap-5">
-              <Button className="min-w-[155px]" title="Shop women" />
-              <Button className="min-w-[155px]" title="Shop men" />
+              <Button
+                href="market/women"
+                className="min-w-[155px]"
+                title="Shop women"
+              />
+              <Button
+                href="market/men"
+                className="min-w-[155px]"
+                title="Shop men"
+              />
             </div>
           </div>
         </Container>
@@ -139,10 +147,12 @@ export default function Home() {
               <SectionCard
                 bg="https://cdn.shopify.com/s/files/1/1754/6207/files/Womens_New_In_2_copy_720x.png?v=1650848411"
                 title="shop women"
+                href="market/women"
               ></SectionCard>
               <SectionCard
                 bg="https://cdn.shopify.com/s/files/1/1754/6207/files/Screen_Shot_2022-04-24_at_20.04.27_900x.png?v=1650848693"
                 title="shop men"
+                href="market/men"
               ></SectionCard>
             </div>
           </Section>

@@ -147,6 +147,9 @@ a {
   animation: headerAnime .4s cubic-bezier(.165, .84, .44, 1);
   position: fixed;
   transform: translateY(0);
+}
+
+.def.header--opening {
   background-color: #f4eae4;
 }
 
@@ -228,4 +231,31 @@ input[type=checkbox] {
 
 input[type=checkbox]:checked {
   background-color: #ddd;
+}
+
+/* .wishlist-img-container span {
+  height: 180px !important;
+} */
+
+.wishlist-card {
+  margin-right: 20px;
+  margin-bottom: 30px;
+}
+
+.wishlist-card:nth-child(3n) {
+  margin-right: 0 !important;
+}
+
+@media (max-width: 1200px) {
+  .wishlist-card {
+    width: calc(50% - 7px);
+    margin-right: 14px;
+    margin-bottom: 14px;
+  }
+  .wishlist-card:nth-child(3n) {
+    margin-right: auto !important;
+  }
+  .wishlist-card:nth-child(2n) {
+    margin-right: 0 !important;
+  }
 }

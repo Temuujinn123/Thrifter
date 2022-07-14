@@ -1,6 +1,6 @@
 export const ClothCardData = [
   {
-    img: "https://cdn.shopify.com/s/files/1/1754/6207/products/51980-130876-11_600x.jpg?v=1652494546",
+    img: "https://cdn.shopify.com/s/files/1/1754/6207/products/19286-129163-02_600x.jpg?v=1652494075",
     title: "Hugo Boss jumper1",
     price: "$40.0",
     href: "/market/men1",

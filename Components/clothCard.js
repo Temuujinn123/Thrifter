@@ -5,13 +5,18 @@ import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 
 export const ClothCard = ({ img, title, price, href }) => {
   const [isHeartCLicked, setIsHeartCLicked] = useState(false);
+  const [isMouseEnter, setIsMouseEnter] = useState(false);
 
   return (
-    <div className="relative my-[15px] mx-[.99%] border-2 border-[#eef1f4] rounded-[12px] inline overflow-hidden w-[48%] h-auto md:h-[440px] md:w-[31.3%] transition-[.5s] hover:shadow-xl">
+    <div
+      className="relative my-[15px] mx-[.99%] border-2 border-[#eef1f4] rounded-[12px] inline overflow-hidden w-[48%] h-auto md:h-[440px] md:w-[31.3%] transition-[.5s] hover:shadow-xl"
+      onMouseEnter={() => setIsMouseEnter(true)}
+      onMouseLeave={() => setIsMouseEnter(false)}
+    >
       <div className="max-w-full h-[276px] relative">
         <Link href={href}>
           <a className="w-full h-full flex justify-center items-center">
-            <Image src={img} alt="" width="100%" height="100%" />
+            <Image src={img} alt="" layout="fill" />
           </a>
         </Link>
       </div>
@@ -38,6 +43,15 @@ export const ClothCard = ({ img, title, price, href }) => {
               className={`${isHeartCLicked ? "hidden" : "block"}`}
             />
           </span>
+        </button>
+      </div>
+      <div
+        className={`${
+          isMouseEnter ? "opacity-1 visible" : "opacity-0 invisible"
+        } w-full p-[15px] pt-0 transition-[.5s]`}
+      >
+        <button className="uppercase bg-[#e66328] border border-[#e66328] font-[400] curosr-pointer h-[47px] text-md rounded-sm text-white w-full text-center hover:text-[#133246]">
+          Add to basket
         </button>
       </div>
     </div>

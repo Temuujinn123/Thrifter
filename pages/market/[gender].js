@@ -1,10 +1,7 @@
 import { useRouter } from "next/router";
-import Button from "../../Components/button";
 import Container from "../../Components/container";
 import { Footer } from "../../Components/footer";
 import Header from "../../Components/header";
-import { SectionPara } from "../../Components/sectionParagraph";
-import { AiFillCaretDown } from "react-icons/ai";
 import { Filter } from "../../Components/filter";
 import { ClothCard } from "../../Components/clothCard";
 import { SideFilterHeader } from "../../Components/sideFilterHeader";
@@ -12,17 +9,27 @@ import { SideFilterHeader } from "../../Components/sideFilterHeader";
 import { ClothCardData } from "../../dummyData/clothCard";
 import { FilterData } from "../../dummyData/filter";
 import { useState } from "react";
+import { SortButton } from "../../Components/sortButton";
 
 const Gender = () => {
   const router = useRouter();
   const { gender } = router.query;
 
-  const [isSortClicked, setIsSortClicked] = useState(false);
-
   return (
     <>
       <Header normal />
-      <div className="mt-10 md:mt-[110px]">
+      <div className="mt-0 md:mt-[70px] overflow-x-hidden">
+        <div className="mb-10">
+          <div className="bg-[#F2E7E2] relative pt-[30px] pb-[45px] after:bg-[#3B4859] after:absolute after:w-[110%] after:h-[130%] after:left-[-5%] after:top-[-30%] after:rotate-[-1deg]">
+            <Container>
+              <div className="relative z-10">
+                <h1 className="tracking-[.02em] font-bold md:text-[35px] leading-[40px] text-white text-center">
+                  Boutique + {gender}`s new in
+                </h1>
+              </div>
+            </Container>
+          </div>
+        </div>
         <Container>
           <div className="mt-7"></div>
           <div className="flex gap-4">
@@ -42,20 +49,7 @@ const Gender = () => {
                   <span className="text-[.8em] font-medium hidden md:block">
                     Sort by:
                   </span>
-                  <Button
-                    onclick={() => setIsSortClicked(!isSortClicked)}
-                    normal
-                    title="Sort"
-                    icon={AiFillCaretDown}
-                  >
-                    <div
-                      className={`${
-                        isSortClicked ? "block" : "hidden"
-                      } absolute w-full top-[100%] left-0`}
-                    >
-                      Hello
-                    </div>
-                  </Button>
+                  <SortButton />
                 </div>
                 <div>
                   <span className="uppercase text-left text-[#252d3a] font-medium text-[13.6px] md:text-[16px] md:leading-[1.6]">
@@ -63,7 +57,7 @@ const Gender = () => {
                   </span>
                 </div>
               </div>
-              <div className="flex flex-wrap">
+              <div className="flex flex-wrap mt-0 md:mt-7 mb-16">
                 {ClothCardData.map((data, index) => (
                   <ClothCard
                     img={data.img}

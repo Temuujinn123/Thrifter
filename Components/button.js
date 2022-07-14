@@ -9,6 +9,7 @@ export default function Button({
   icon,
   onclick,
   children,
+  href,
 }) {
   return normal ? (
     <button
@@ -26,7 +27,7 @@ export default function Button({
       {children}
     </button>
   ) : (
-    <Link href="/">
+    <Link href={href ? href : "/"}>
       <a
         className={`${className} font-[${
           font ? font : "600"

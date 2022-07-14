@@ -12,8 +12,9 @@ import { IoIosArrowDown } from "react-icons/io";
 import darkLogo from "../public/img/Thrift_Logo_Dark.svg";
 import whiteLogo from "../public/img/Thrift_Logo_Boutique_white.svg";
 import Container from "./container";
+import Link from "next/link";
 
-export default function Header({ normal }) {
+export default function Header({ normal, className, noExtraNav }) {
   const [fixed, setFixed] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [menuOpened, setMenuOpened] = useState(false);
@@ -40,9 +41,11 @@ export default function Header({ normal }) {
   return (
     <>
       <div
-        className={`${
+        className={`${className} ${
+          fixed ? `header--opening ${normal ? "bg-[#252d3a]" : "def"}` : ""
+        } ${
           normal ? "bg-[#252d3a] shadow-sm" : "bg-white md:bg-transparent"
-        } top-0 left-0 w-full z-20 header ${fixed ? "header--opening" : ""}`}
+        } top-0 left-0 w-full z-30 header`}
       >
         <Container>
           <div className="flex items-center h-[70px] justify-between px-0">
@@ -57,36 +60,54 @@ export default function Header({ normal }) {
               </span>
             </div>
             <div className="h-6">
-              <Image
-                alt=""
-                src={normal ? whiteLogo : darkLogo}
-                height="25"
-                width={`${normal ? "200" : "170"}`}
-                className="bg-cover d-inline"
-              />
+              <Link href="/">
+                <a>
+                  <Image
+                    alt=""
+                    src={normal ? whiteLogo : darkLogo}
+                    height="25"
+                    width={`${normal ? "200" : "170"}`}
+                    className="bg-cover d-inline"
+                  />
+                </a>
+              </Link>
             </div>
             <div className="hidden md:block">
               <ul className="flex">
-                <li className="px-5 py-2 text-xl font-bold uppercase cursor-pointer relative nav-list text-[#252d3a]">
+                <li
+                  className={`${
+                    normal ? "text-white after:bg-white" : "text-[#252d3a]"
+                  } px-5 py-2 text-xl font-bold uppercase cursor-pointer relative nav-list`}
+                >
                   market
                 </li>
-                <li className="px-5 py-2 text-xl font-bold uppercase cursor-pointer relative nav-list text-[#252d3a]">
+                <li
+                  className={`${
+                    normal ? "text-white after:bg-white" : "text-[#252d3a]"
+                  } px-5 py-2 text-xl font-bold uppercase cursor-pointer relative nav-list`}
+                >
                   sell-cloth
                 </li>
-                <li className="px-5 py-2 text-xl font-bold uppercase cursor-pointer relative nav-list text-[#252d3a]">
+                <li
+                  className={`${
+                    normal ? "text-white after:bg-white" : "text-[#252d3a]"
+                  } px-5 py-2 text-xl font-bold uppercase cursor-pointer relative nav-list`}
+                >
                   about us
                 </li>
               </ul>
             </div>
             <div>
               <div className="gap-4 hidden md:flex">
-                <span
-                  className={`${
-                    normal ? "text-white" : ""
-                  } text-3xl cursor-pointer`}
-                >
-                  <BsFillPersonFill />
-                </span>
+                <Link href="/account/login">
+                  <a
+                    className={`${
+                      normal ? "text-white" : ""
+                    } text-3xl cursor-pointer`}
+                  >
+                    <BsFillPersonFill />
+                  </a>
+                </Link>
                 <span
                   className={`${
                     normal ? "text-white" : ""
@@ -94,13 +115,15 @@ export default function Header({ normal }) {
                 >
                   <AiOutlineSearch />
                 </span>
-                <span
-                  className={`${
-                    normal ? "text-white" : ""
-                  } text-3xl cursor-pointer`}
-                >
-                  <AiOutlineHeart />
-                </span>
+                <Link href="/wishlist">
+                  <a
+                    className={`${
+                      normal ? "text-white" : ""
+                    } text-3xl cursor-pointer`}
+                  >
+                    <AiOutlineHeart />
+                  </a>
+                </Link>
               </div>
               <div className="flex gap-2 md:hidden">
                 <span
@@ -123,31 +146,35 @@ export default function Header({ normal }) {
         </Container>
       </div>
 
-      <div
-        className={`${fixed ? "extra-nav--opening" : ""} ${
-          normal ? "hidden" : "block"
-        } bg-[#eef1f4] md:hidden py-4 z-10`}
-      >
-        <Container>
-          <ul className="flex justify-between">
-            <li className="">
-              <a className="text-[#252d3a] text-[15px] font-bold text-center block">
-                Women
-              </a>
-            </li>
-            <li className="">
-              <a className="text-[#252d3a] text-[15px] font-bold text-center block">
-                Men
-              </a>
-            </li>
-            <li className="">
-              <a className="text-[#252d3a] text-[15px] font-bold text-center block">
-                Re-sell
-              </a>
-            </li>
-          </ul>
-        </Container>
-      </div>
+      {noExtraNav ? (
+        ""
+      ) : (
+        <div
+          className={`${fixed ? "extra-nav--opening" : ""} ${
+            normal ? "hidden" : "block"
+          } bg-[#eef1f4] md:hidden py-4 z-10`}
+        >
+          <Container>
+            <ul className="flex justify-between">
+              <li className="">
+                <a className="text-[#252d3a] text-[15px] font-bold text-center block">
+                  Women
+                </a>
+              </li>
+              <li className="">
+                <a className="text-[#252d3a] text-[15px] font-bold text-center block">
+                  Men
+                </a>
+              </li>
+              <li className="">
+                <a className="text-[#252d3a] text-[15px] font-bold text-center block">
+                  Re-sell
+                </a>
+              </li>
+            </ul>
+          </Container>
+        </div>
+      )}
 
       {/* side menu => */}
       <div
