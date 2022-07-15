@@ -8,7 +8,6 @@ import { SideFilterHeader } from "../../Components/sideFilterHeader";
 
 import { ClothCardData } from "../../dummyData/clothCard";
 import { FilterData } from "../../dummyData/filter";
-import { useState } from "react";
 import { SortButton } from "../../Components/sortButton";
 
 const Gender = () => {

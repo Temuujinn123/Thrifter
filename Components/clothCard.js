@@ -50,7 +50,7 @@ export const ClothCard = ({ img, title, price, href }) => {
           isMouseEnter ? "opacity-1 visible" : "opacity-0 invisible"
         } w-full p-[15px] pt-0 transition-[.5s]`}
       >
-        <button className="uppercase bg-[#e66328] border border-[#e66328] font-[400] curosr-pointer h-[47px] text-md rounded-sm text-white w-full text-center hover:text-[#133246]">
+        <button className="uppercase bg-[#e66328] border border-[#e66328] font-[400] cursor-pointer h-[47px] text-md rounded-sm text-white w-full text-center hover:text-[#133246]">
           Add to basket
         </button>
       </div>

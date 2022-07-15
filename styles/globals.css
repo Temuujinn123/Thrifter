@@ -118,7 +118,6 @@ a {
   left: -5px;
   width: calc(100% + 10px);
   height: calc(100% + 10px);
-  background-color: #DAE0E7;
   transform: rotate(-1deg);
   border-radius: 4px;
   z-index: -1;

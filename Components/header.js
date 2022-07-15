@@ -14,7 +14,7 @@ import whiteLogo from "../public/img/Thrift_Logo_Boutique_white.svg";
 import Container from "./container";
 import Link from "next/link";
 
-export default function Header({ normal, className, noExtraNav }) {
+export default function Header({ normal, className, noExtraNav, extraNavBg }) {
   const [fixed, setFixed] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [menuOpened, setMenuOpened] = useState(false);
@@ -151,8 +151,8 @@ export default function Header({ normal, className, noExtraNav }) {
       ) : (
         <div
           className={`${fixed ? "extra-nav--opening" : ""} ${
-            normal ? "hidden" : "block"
-          } bg-[#eef1f4] md:hidden py-4 z-10`}
+            extraNavBg ? extraNavBg : "bg-[#eef1f4]"
+          } md:hidden py-4 z-30`}
         >
           <Container>
             <ul className="flex justify-between">
