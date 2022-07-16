@@ -51,7 +51,7 @@ export default function Login() {
               </div>
               <div className="w-full">
                 <div className="mb-4 w-full">
-                  <Button title="Sign in" className="block md:w-full" />
+                  <Button title="Sign in" className="login-button" />
                 </div>
                 <Link href="/account/register">
                   <a className="text-[#252d3a] cursor-pointer text-center font-medium text-[13.6px] md:text-[16px] leading-[1.6] tracking-[.025em] block">
@@ -118,7 +118,7 @@ export default function Login() {
               </div>
               <div className="w-full">
                 <div className="mb-4 w-full">
-                  <Button title="Create" className="block md:w-full" />
+                  <Button title="Create" className="login-button" />
                 </div>
                 <Link href="/account/login">
                   <a className="text-[#252d3a] cursor-pointer text-center font-medium text-[13.6px] md:text-[16px] leading-[1.6] tracking-[.025em] block">

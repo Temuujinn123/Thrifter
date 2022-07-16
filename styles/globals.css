@@ -258,3 +258,8 @@ input[type=checkbox]:checked {
     margin-right: 0 !important;
   }
 }
+
+.login-button {
+  width: 100% !important;
+  display: block;
+}

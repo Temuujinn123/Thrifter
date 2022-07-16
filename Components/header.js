@@ -79,21 +79,21 @@ export default function Header({ normal, className, noExtraNav, extraNavBg }) {
                     normal ? "text-white after:bg-white" : "text-[#252d3a]"
                   } px-5 py-2 text-xl font-bold uppercase cursor-pointer relative nav-list`}
                 >
-                  market
+                  Re-sell
                 </li>
                 <li
                   className={`${
                     normal ? "text-white after:bg-white" : "text-[#252d3a]"
                   } px-5 py-2 text-xl font-bold uppercase cursor-pointer relative nav-list`}
                 >
-                  sell-cloth
+                  Men
                 </li>
                 <li
                   className={`${
                     normal ? "text-white after:bg-white" : "text-[#252d3a]"
                   } px-5 py-2 text-xl font-bold uppercase cursor-pointer relative nav-list`}
                 >
-                  about us
+                  Women
                 </li>
               </ul>
             </div>
