@@ -14,20 +14,20 @@ export const ClothCard = ({ img, title, price, href }) => {
       onMouseLeave={() => setIsMouseEnter(false)}
     >
       <div className="max-w-full h-[276px] relative">
-        <Link href={href}>
+        <Link href={href ? href : "/"}>
           <a className="w-full h-full flex justify-center items-center">
             <Image src={img} alt="" layout="fill" />
           </a>
         </Link>
       </div>
       <div className="text-center mt-1 py-[10px] px-[15px] bg-white w-full">
-        <Link href={href}>
+        <Link href={href ? href : "/"}>
           <a className="bg-transparent text-center text-[#666] text-[.87em] leading-[1.3em]">
             {title}
           </a>
         </Link>
         <div className="w-full mt-1">
-          <Link href={href}>
+          <Link href={href ? href : "/"}>
             <a className="text-[1.2em] text-[#666] font-medium text-center">
               {price}
             </a>

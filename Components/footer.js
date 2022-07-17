@@ -1,6 +1,7 @@
 import Container from "./container";
 import LogoWhite from "../public/img/logo-white.webp";
 import Image from "next/image";
+import Link from "next/link";
 
 export const Footer = () => {
   return (
@@ -22,34 +23,44 @@ export const Footer = () => {
               </h1>
               <ul>
                 <li className="py-1">
-                  <a href="" className="text-[13px] leading-[16px] font-medium">
-                    About us
-                  </a>
+                  <Link href="">
+                    <a className="text-[13px] leading-[16px] font-medium">
+                      About us
+                    </a>
+                  </Link>
                 </li>
                 <li className="py-1">
-                  <a href="" className="text-[13px] leading-[16px] font-medium">
+                  <a className="text-[13px] leading-[16px] font-medium">
                     Our story
                   </a>
                 </li>
                 <li className="py-1">
-                  <a href="" className="text-[13px] leading-[16px] font-medium">
-                    For charities
-                  </a>
+                  <Link href="">
+                    <a className="text-[13px] leading-[16px] font-medium">
+                      For charities
+                    </a>
+                  </Link>
                 </li>
                 <li className="py-1">
-                  <a href="" className="text-[13px] leading-[16px] font-medium">
-                    For retailers
-                  </a>
+                  <Link href="">
+                    <a className="text-[13px] leading-[16px] font-medium">
+                      For retailers
+                    </a>
+                  </Link>
                 </li>
                 <li className="py-1">
-                  <a href="" className="text-[13px] leading-[16px] font-medium">
-                    Help
-                  </a>
+                  <Link href="">
+                    <a className="text-[13px] leading-[16px] font-medium">
+                      Help
+                    </a>
+                  </Link>
                 </li>
                 <li className="py-1">
-                  <a href="" className="text-[13px] leading-[16px] font-medium">
-                    Contact us
-                  </a>
+                  <Link href="">
+                    <a className="text-[13px] leading-[16px] font-medium">
+                      Contact us
+                    </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -59,44 +70,60 @@ export const Footer = () => {
               </h1>
               <ul>
                 <li className="py-1">
-                  <a href="" className="text-[13px] leading-[16px] font-medium">
-                    Return an item
-                  </a>
+                  <Link href="">
+                    <a className="text-[13px] leading-[16px] font-medium">
+                      Return an item
+                    </a>
+                  </Link>
                 </li>
                 <li className="py-1">
-                  <a href="" className="text-[13px] leading-[16px] font-medium">
-                    Return a ThriftBag
-                  </a>
+                  <Link href="">
+                    <a className="text-[13px] leading-[16px] font-medium">
+                      Return a ThriftBag
+                    </a>
+                  </Link>
                 </li>
                 <li className="py-1">
-                  <a href="" className="text-[13px] leading-[16px] font-medium">
-                    Refund Policy
-                  </a>
+                  <Link href="">
+                    <a className="text-[13px] leading-[16px] font-medium">
+                      Refund Policy
+                    </a>
+                  </Link>
                 </li>
                 <li className="py-1">
-                  <a href="" className="text-[13px] leading-[16px] font-medium">
-                    Privacy
-                  </a>
+                  <Link href="">
+                    <a className="text-[13px] leading-[16px] font-medium">
+                      Privacy
+                    </a>
+                  </Link>
                 </li>
                 <li className="py-1">
-                  <a href="" className="text-[13px] leading-[16px] font-medium">
-                    Terms of Service
-                  </a>
+                  <Link href="">
+                    <a className="text-[13px] leading-[16px] font-medium">
+                      Terms of Service
+                    </a>
+                  </Link>
                 </li>
                 <li className="py-1">
-                  <a href="" className="text-[13px] leading-[16px] font-medium">
-                    Shipping Policy
-                  </a>
+                  <Link href="">
+                    <a className="text-[13px] leading-[16px] font-medium">
+                      Shipping Policy
+                    </a>
+                  </Link>
                 </li>
                 <li className="py-1">
-                  <a href="" className="text-[13px] leading-[16px] font-medium">
-                    Billing Ts&Cs
-                  </a>
+                  <Link href="">
+                    <a className="text-[13px] leading-[16px] font-medium">
+                      Billing Ts&Cs
+                    </a>
+                  </Link>
                 </li>
                 <li className="py-1">
-                  <a href="" className="text-[13px] leading-[16px] font-medium">
-                    Refund policy
-                  </a>
+                  <Link href="">
+                    <a className="text-[13px] leading-[16px] font-medium">
+                      Refund policy
+                    </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -106,19 +133,25 @@ export const Footer = () => {
               </h1>
               <ul>
                 <li className="py-1">
-                  <a href="" className="text-[13px] leading-[16px] font-medium">
-                    Re-sell
-                  </a>
+                  <Link href="">
+                    <a className="text-[13px] leading-[16px] font-medium">
+                      Re-sell
+                    </a>
+                  </Link>
                 </li>
                 <li className="py-1">
-                  <a href="" className="text-[13px] leading-[16px] font-medium">
-                    Women
-                  </a>
+                  <Link href="">
+                    <a className="text-[13px] leading-[16px] font-medium">
+                      Women
+                    </a>
+                  </Link>
                 </li>
                 <li className="py-1">
-                  <a href="" className="text-[13px] leading-[16px] font-medium">
-                    Men
-                  </a>
+                  <Link href="">
+                    <a className="text-[13px] leading-[16px] font-medium">
+                      Men
+                    </a>
+                  </Link>
                 </li>
               </ul>
             </div>

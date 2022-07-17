@@ -2,7 +2,6 @@ import Image from "next/image";
 import BannerImage from "../public/img/banner-image.webp";
 import Container from "./container";
 import Button from "./button";
-import { TextHighlighter } from "./textHighlighter";
 import { BannerTitle } from "./bannerTitle";
 
 export default function Banner() {
@@ -12,7 +11,7 @@ export default function Banner() {
         <Image className="" src={BannerImage} alt="" />
       </div>
       <Container>
-        <div className="h-full justify-center flex-col hidden md:flex">
+        <div className="h-full justify-center flex-col hidden md:flex banner-title-anime">
           <BannerTitle
             title={[
               "Explore our huge range of",

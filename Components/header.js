@@ -79,21 +79,36 @@ export default function Header({ normal, className, noExtraNav, extraNavBg }) {
                     normal ? "text-white after:bg-white" : "text-[#252d3a]"
                   } px-5 py-2 text-xl font-bold uppercase cursor-pointer relative nav-list`}
                 >
-                  Re-sell
+                  <Link href="/re-sell">
+                    <a>Re-sell</a>
+                  </Link>
                 </li>
                 <li
                   className={`${
                     normal ? "text-white after:bg-white" : "text-[#252d3a]"
                   } px-5 py-2 text-xl font-bold uppercase cursor-pointer relative nav-list`}
                 >
-                  Men
+                  <Link href="/market/men">
+                    <a className="">Men</a>
+                  </Link>
                 </li>
                 <li
                   className={`${
                     normal ? "text-white after:bg-white" : "text-[#252d3a]"
                   } px-5 py-2 text-xl font-bold uppercase cursor-pointer relative nav-list`}
                 >
-                  Women
+                  <Link href="/market/women">
+                    <a className="">Women</a>
+                  </Link>
+                </li>
+                <li
+                  className={`${
+                    normal ? "text-white after:bg-white" : "text-[#252d3a]"
+                  } px-5 py-2 text-xl font-bold uppercase cursor-pointer relative nav-list`}
+                >
+                  <Link href="/market/all">
+                    <a>All</a>
+                  </Link>
                 </li>
               </ul>
             </div>

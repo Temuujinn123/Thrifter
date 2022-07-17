@@ -12,7 +12,7 @@ export const HomeMarket = () => {
           <TextHighlighter>low prices.</TextHighlighter>
         </h1>
         <div className="flex justify-center">
-          <ViewAll link="/market" />
+          <ViewAll link="/market/all" />
         </div>
       </div>
       <div className="flex overflow-x-auto gap-5 w-full">
@@ -33,7 +33,7 @@ export const HomeMarket = () => {
           price="£5.00"
         />
         <div className="flex md:hidden h-full justify-center items-center self-center main-cloth-card">
-          <Link href="/market">
+          <Link href="market">
             <a className="inline-block p-3 text-center border cursor-pointer text-[.75rem] whitespace-normal">
               View all <br /> 22362 products
             </a>

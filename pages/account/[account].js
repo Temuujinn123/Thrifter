@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import Button from "../../Components/button";
 import { Footer } from "../../Components/footer";
 import Header from "../../Components/header";
+import { TextInput } from "../../Components/textInput";
 
 export default function Login() {
   const router = useRouter();
@@ -25,29 +26,10 @@ export default function Login() {
                 </h1>
               </div>
               <div>
-                <label
-                  htmlFor="emailInput"
-                  className="uppercase text-[.75em] md:text-[12px] tracking-[.3em] mb-2 font-medium cursor-pointer block"
-                >
-                  Email
-                </label>
-                <input
-                  id="emailInput"
-                  className="mb-7 py-2 px-3 text-[1rem] w-full border border-[#e8e8e1] block tracking-[.025em] font-medium"
-                />
+                <TextInput id="emailInput" title="Email" />
               </div>
               <div>
-                <label
-                  htmlFor="password"
-                  className="uppercase text-[.75em] md:text-[12px] tracking-[.3em] mb-2 font-medium cursor-pointer block"
-                >
-                  Password
-                </label>
-                <input
-                  type="password"
-                  id="emailInput"
-                  className="mb-7 py-2 px-3 text-[1rem] w-full border border-[#e8e8e1] block tracking-[.025em] font-medium"
-                />
+                <TextInput id="password" title="Password" />
               </div>
               <div className="w-full">
                 <div className="mb-4 w-full">
@@ -68,53 +50,16 @@ export default function Login() {
                 </h1>
               </div>
               <div>
-                <label
-                  htmlFor="firstNameInput"
-                  className="uppercase text-[.75em] md:text-[12px] tracking-[.3em] mb-2 font-medium cursor-pointer block"
-                >
-                  First name
-                </label>
-                <input
-                  id="firstNameInput"
-                  className="mb-7 py-2 px-3 text-[1rem] w-full border border-[#e8e8e1] block tracking-[.025em] font-medium"
-                />
+                <TextInput id="firstNameInput" title="First name" />
               </div>
               <div>
-                <label
-                  htmlFor="lastNameInput"
-                  className="uppercase text-[.75em] md:text-[12px] tracking-[.3em] mb-2 font-medium cursor-pointer block"
-                >
-                  Last name
-                </label>
-                <input
-                  id="lastNameInput"
-                  className="mb-7 py-2 px-3 text-[1rem] w-full border border-[#e8e8e1] block tracking-[.025em] font-medium"
-                />
+                <TextInput id="lastNameInput" title="Last name" />
               </div>
               <div>
-                <label
-                  htmlFor="emailInput"
-                  className="uppercase text-[.75em] md:text-[12px] tracking-[.3em] mb-2 font-medium cursor-pointer block"
-                >
-                  Email
-                </label>
-                <input
-                  id="emailInput"
-                  className="mb-7 py-2 px-3 text-[1rem] w-full border border-[#e8e8e1] block tracking-[.025em] font-medium"
-                />
+                <TextInput id="emailInput" title="Email" />
               </div>
               <div>
-                <label
-                  htmlFor="password"
-                  className="uppercase text-[.75em] md:text-[12px] tracking-[.3em] mb-2 font-medium cursor-pointer block"
-                >
-                  Password
-                </label>
-                <input
-                  type="password"
-                  id="password"
-                  className="mb-7 py-2 px-3 text-[1rem] w-full border border-[#e8e8e1] block tracking-[.025em] font-medium"
-                />
+                <TextInput id={password} title="Password" />
               </div>
               <div className="w-full">
                 <div className="mb-4 w-full">

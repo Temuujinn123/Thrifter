@@ -9,21 +9,37 @@ import { SideFilterHeader } from "../../Components/sideFilterHeader";
 import { ClothCardData } from "../../dummyData/clothCard";
 import { FilterData } from "../../dummyData/filter";
 import { SortButton } from "../../Components/sortButton";
+import Head from "next/head";
 
 const Gender = () => {
   const router = useRouter();
-  const { gender } = router.query;
+  const { type } = router.query;
 
   return (
     <>
+      <Head>
+        <title>
+          Thrifter{" "}
+          {type === "all" ? "All" : type === "women" ? "Women`s" : "Men`s"}{" "}
+          Clothes
+        </title>
+      </Head>
       <Header normal />
       <div className="mt-0 md:mt-[70px] overflow-x-hidden">
         <div className="mb-10">
-          <div className="bg-[#F2E7E2] relative pt-[30px] pb-[45px] after:bg-[#3B4859] after:absolute after:w-[110%] after:h-[130%] after:left-[-5%] after:top-[-30%] after:rotate-[-1deg]">
+          <div
+            className={`bg-[#F2E7E2] relative pt-[30px] pb-[45px] ${
+              type === "women" ? "after:bg-[#AF5731]" : "after:bg-[#3B4859]"
+            }  after:absolute after:w-[110%] after:h-[130%] after:left-[-5%] after:top-[-30%] after:rotate-[-1deg]`}
+          >
             <Container>
               <div className="relative z-10">
                 <h1 className="tracking-[.02em] font-bold md:text-[35px] leading-[40px] text-white text-center">
-                  Boutique + {gender}`s new in
+                  {type === "all"
+                    ? "Boutique + All New In"
+                    : type === "women"
+                    ? "Boutique + Women`s New In"
+                    : "Boutique + Men`s New In"}
                 </h1>
               </div>
             </Container>
