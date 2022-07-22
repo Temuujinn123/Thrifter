@@ -11,7 +11,7 @@ export default function Banner() {
         <Image className="" src={BannerImage} alt="" />
       </div>
       <Container>
-        <div className="h-full justify-center flex-col hidden md:flex banner-title-anime">
+        <div className="h-full w-full justify-center flex-col hidden md:flex banner-title-anime">
           <BannerTitle
             title={[
               "Explore our huge range of",
